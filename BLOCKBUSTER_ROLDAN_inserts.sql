@@ -102,5 +102,96 @@ INSERT INTO reproducciones (id_usuario, id_pelicula, fecha_reproduccion) VALUES
 (6, 31, '2024-12-01'),
 (1, 32, '2024-12-20');
 
+INSERT INTO directores (nombre) VALUES
+('James Cameron'), 
+('Steven Spilberg'), 
+('John Lasseter'),
+('Chuck Russell'),
+('Francis Coppola'),
+('Robert Zemeckis'),
+('Peter Jackson'),
+('James Wan'),
+('Damien Chazelle'),
+('David Fincher') ,
+('Christopher Nolan'), 
+('Martin Scorsese'),
+('Sergio Leone');
+
+INSERT INTO directores_y_peliculas (id_director, id_pelicula) VALUES
+(1, 17), 
+(2, 18), 
+(3, 19),  
+(4, 20),  
+(5, 21), 
+(6, 22),  
+(7, 23),  
+(8, 24),  
+(9, 25),  
+(10, 26), 
+(1, 27),  
+(11, 28), 
+(11, 29), 
+(12, 30), 
+(2, 31),  
+(13, 32); 
+
+
+INSERT INTO idiomas_peliculas (id_pelicula, idioma, subtitulada)
+VALUES 
+-- terminator 
+(17,'Inglés', TRUE),
+(17, 'Español', FALSE),
+-- Jurassic Park
+(18, 'Inglés', TRUE),
+(18, 'Español', FALSE),
+(18, 'Francés', TRUE),
+-- Toy Story
+(19, 'Inglés', TRUE),
+(19, 'Español', FALSE),
+-- The Godfather
+(21, 'Inglés', FALSE),
+(21, 'Español', TRUE),
+(21, 'Italiano', TRUE),
+-- The Mask
+(20, 'Inglés', FALSE),
+(20, 'Español', TRUE),
+-- forrest gump
+(22, 'Inglés', FALSE),
+(22, 'Español', TRUE),
+(22, 'Frances', TRUE),
+-- TLOR
+(23, 'Inglés', TRUE),
+(23, 'Español', TRUE),
+-- The Conjunring
+(24, 'Inglés', FALSE),
+(24, 'Español', FALSE),
+(24, 'Frances', TRUE),
+(24, 'Japones', TRUE),
+-- La La Land
+(25, 'Inglés', FALSE),
+-- Se7en
+(26, 'Inglés', true),
+(26, 'Español', FALSE),
+-- Titanic
+(27, 'Inglés', FALSE),
+(27, 'Español', TRUE),
+(27, 'Portugués', TRUE),
+-- Interstellar
+(28, 'Inglés', FALSE),
+(28, 'Español', TRUE),
+(28, 'Francés', TRUE),
+-- Inception
+(29, 'Inglés', FALSE),
+(29, 'Español', TRUE),
+-- RagingBull 
+(30, 'Inglés', FALSE),
+
+-- Saving Private Ryan
+(31, 'Inglés', TRUE),
+(31, 'Español', FALSE),
+(31, 'Frances', TRUE),
+-- el bueno
+(32, 'Inglés', TRUE),
+(32, 'Español', TRUE);
 
 

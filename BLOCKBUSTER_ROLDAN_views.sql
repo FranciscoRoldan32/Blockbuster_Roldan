@@ -17,3 +17,13 @@ JOIN peliculas p ON r.id_pelicula = p.id_pelicula
 JOIN genero g ON p.genero = g.id_genero
 GROUP BY p.id_pelicula, p.titulo, g.nombre_genero
 ORDER BY total_reproducciones DESC;
+
+CREATE VIEW peliculas_con_directores AS
+SELECT 
+    p.titulo AS Pelicula,
+    p.anio AS Año,
+    d.nombre AS Director
+FROM peliculas p
+INNER JOIN directores_y_peliculas dp ON p.id_pelicula = dp.id_pelicula
+INNER JOIN directores d ON dp.id_director = d.id_directores
+ORDER BY p.anio;
