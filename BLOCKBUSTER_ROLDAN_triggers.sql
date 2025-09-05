@@ -10,3 +10,16 @@ BEGIN
 END //
 
 DELIMITER ;
+
+DELIMITER //
+create trigger validacion_pelicula_repetida
+before insert on peliculas
+for each row 
+	BEGIN
+    IF EXISTS (SELECT 1 FROM peliculas WHERE titulo = NEW.titulo) THEN
+        SIGNAL SQLSTATE '45000'
+            SET MESSAGE_TEXT = 'Ya existe una película con ese título';
+    END IF;
+END //
+
+DELIMITER ;

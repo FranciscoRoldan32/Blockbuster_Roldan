@@ -16,3 +16,16 @@ BEGIN
 END //
 
 DELIMITER ;
+
+DELIMITER //
+CREATE FUNCTION peliculas_por_genero(genero_id INT)
+RETURNS TEXT
+DETERMINISTIC
+BEGIN
+    DECLARE lista TEXT;
+    SELECT GROUP_CONCAT(titulo SEPARATOR ', ') INTO lista
+    FROM peliculas
+    WHERE genero = genero_id;
+    RETURN lista;
+END//
+DELIMITER ;

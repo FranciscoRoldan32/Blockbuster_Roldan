@@ -27,3 +27,23 @@ FROM peliculas p
 INNER JOIN directores_y_peliculas dp ON p.id_pelicula = dp.id_pelicula
 INNER JOIN directores d ON dp.id_director = d.id_directores
 ORDER BY p.anio;
+
+CREATE VIEW peliculas_con_idiomas as 
+select 
+	p.titulo,
+    pa.idioma,
+    if(pa.subtitulada= 1,'si','no') as subtitulo
+    from idiomas_peliculas pa 
+    inner join peliculas p on pa.id_pelicula = p.id_pelicula ;
+    
+CREATE OR REPLACE VIEW usuario_mas_activo AS
+SELECT 
+    u.id_usuario,
+    u.nombre,
+    u.apellido,
+    COUNT(r.id_pelicula) AS cantidad_vistas
+FROM usuarios u
+JOIN reproducciones r ON u.id_usuario = r.id_usuario
+GROUP BY u.id_usuario, u.nombre, u.apellido
+ORDER BY cantidad_vistas DESC
+LIMIT 1;
